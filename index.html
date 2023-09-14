@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CS 101 Home</title>
+        <style>
+            .header {
+                text-align: center;
+                color: white;
+                text-shadow: 1px 1px 10px black;
+                font-family: monospace;
+                font-size: 18px;
+                background-image: url(./resources/images/indexBackground.jpeg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100% auto;
+            }
+            .info {
+                background-color: white;
+                text-align: center;
+            }
+            .links {
+                background-color: lightblue;
+                width: 100%;
+                height: inherit;
+                padding: 0%;
+                position: relative;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            .content {
+            }
+            .contentFrame {
+                border:none;
+                background-color:white;
+                width: 100%;
+                height: 1000px;
+            }
+            .copyright {
+                background-color: midnightblue;
+                height:20px;
+                text-align: center;
+                color: white;
+            }
+            .contentTable {
+                width: 100%;
+            }
+            .link {
+                padding:0px;
+                border: 1px solid black;
+                height:40px;
+                text-align: center;
+                background-color: midnightblue;
+            }
+            .linkDiv {
+                height:100%;
+                width:100%;
+                position:relative;
+                color:white
+            }
+            body {
+                margin: 0px;
+                padding: 0px;
+                width: 100%;
+                height: 100%
+            }
+        </style>
+    </head>
+    <body>
+        <table class="contentTable" cellspacing="0" cellpadding="0">
+            <tr>
+                <td class="header" colspan="10">
+                    <h1>CS 101</h1>
+                </td>
+            </tr>
+            <tr>
+                <td class="info" colspan="10">
+                    <h1 width="100%" style="background: gray; color:rgb(3, 3, 91); border:2px solid black">CS 101, Fall 2023</h1>
+                    <h2 style="text-align:center;"><strong><i>Fundementals of Computer Science I</i></strong></h2>
+                    <p style="text-align:center;">Welcome to the website for CS 101, Fundamentals of Computer Science I, at York College. All information about the course will be posted here.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="link">
+                    <a href="https://ycpcs.github.io/cs101-fall2023/syllabus.html" target="contentPanel">
+                        <div class="linkDiv">
+                            <p>Syllabus</p>
+                        </div>
+                    </a>
+                    
+                </td>
+                <td class="link">
+                    <a href="https://ycpcs.github.io/cs101-fall2023/schedule.html" target="contentPanel">
+                        <div class="linkDiv">
+                            <p>Schedule</p>
+                        </div>
+                    </a>
+                </td>
+                <td class="link">
+                    <a href="https://ycpcs.github.io/cs101-fall2023/labs/index.html" target="contentPanel">
+                        <div class="linkDiv">
+                            <p>Labs</p>
+                        </div>
+                    </a>
+                </td>
+                <td class="link">
+                    <a href="https://ycpcs.github.io/cs101-fall2023/assign/index.html" target="contentPanel">
+                        <div class="linkDiv">
+                            <p>Assignments</p>
+                        </div>
+                    </a>
+                </td>
+                <td class="link">
+                    <a href="https://ycpcs.github.io/cs101-fall2023/design-template.pdf" target="contentPanel">
+                        <div class="linkDiv">
+                            <p>Design Template</p>
+                        </div>
+                    </a>
+                </td>
+                <td class="link">
+                    <a href="https://ycpcs.github.io/cs101-fall2023/refcard.pdf" target="contentPanel">
+                        <div class="linkDiv">
+                            <p>Reference Card</p>
+                        </div>
+                    </a>
+                </td>
+                <td class="link">
+                    <a href="https://ycpcs.github.io/cs101-fall2023/resources.html" target="contentPanel">
+                        <div class="linkDiv">
+                            <p>Resources</p>
+                        </div>
+                    </a>
+                </td>
+                <td class="link">
+                    <a href="tutoring.html" target="contentPanel">
+                        <div class="linkDiv">
+                            <p>Tutoring</p>
+                        </div>
+                    </a>
+                </td>
+                <td class="link">
+                    <a href="https://cs.ycp.edu/marmoset/login" target="contentPanel">
+                        <div class="linkDiv">
+                            <p>Marmoset Submission</p>
+                        </div>
+                    </a>
+                </td>
+                <td class="link">
+                    <a href="https://cs.ycp.edu/marmoset" target="contentPanel">
+                        <div class="linkDiv">
+                            <p>Cloudcoder Exercises</p>
+                        </div>
+                    </a>
+                </td>
+                <td class="link">
+                    <a href="https://cs.ycp.edu/cloudcoder" target="contentPanel">
+                        <div class="linkDiv">
+                            <p>Practice Exams</p>
+                        </div>
+                    </a>
+                </td>
+                <td class="link">
+                    <a href="https://ycpcs.github.io/cs101-fall2023/practice/index.html" target="contentPanel">
+                        <div class="linkDiv">
+                            <p>Practice Exams</p>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="content" colspan="10">
+                    <iframe src="syllabus.html" name="contentPanel" width="100%" class="contentFrame"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td class="copyright" colspan="10">
+                    <a href="./README.html">Copyright (c) 2009-2023</a> |
+                    Unless indicated otherwise, content is freely redistributable |
+                    <a class="cc-img" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="./resources/images/cc-by-sa-80x15.png"></a>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
