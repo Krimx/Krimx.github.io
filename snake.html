@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="snake">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krimx–Snake</title>
+    <link rel="stylesheet" href="dist/css/style.min.css">
+</head>
+<body>
+    <script>
+    function dropdown() {
+        document.getElementById("topbar").style.display = "none";
+        document.getElementById("landing").style.display = "none";
+        document.getElementById("content").style.display = "none";
+        //document.getElementById("footer").style.display = "none";
+
+        const menu = document.createElement("div");
+        menu.className = "dropdownMenu";
+        menu.id = "dropdownMenu";
+
+        const button = document.createElement("button");
+        button.className = "dropdownButton";
+        button.onclick = function removeDropdown() {
+            const toRemove = document.getElementById("dropdownMenu");
+            document.body.removeChild(toRemove);
+
+            document.getElementById("topbar").style.display = "flex";
+            document.getElementById("landing").style.display = "flex";
+            document.getElementById("content").style.display = "flex";
+            //document.getElementById("footer").style.display = "flex";
+        }
+        button.appendChild(document.createElement("hr"));
+        button.appendChild(document.createElement("hr"));
+        button.appendChild(document.createElement("hr"));
+        menu.appendChild(button);
+
+        menu.appendChild(createNewDropdownLink("dropdownLink", "homeLink", "Home", "index.html"));
+        menu.appendChild(createNewDropdownLink("dropdownLink", "projectsLink", "Projects", "projects.html"));
+        menu.appendChild(createNewDropdownLink("dropdownLink", "aboutLink", "About", "about.html"));
+
+
+        document.body.insertBefore(menu, document.body.children[0])
+    }
+
+    function createNewDropdownLink(classname, id, label, href) {
+        const toMake = document.createElement("a");
+        toMake.className = classname;
+        toMake.id = id;
+        toMake.innerHTML = "<p>" + label + "</p>";
+        toMake.href = href;
+
+        return toMake;
+    }
+    </script>
+    <section class="topbar" id="topbar">
+        <a class="topbarLink" href="index.html" tabindex="0">Home</a>
+        <a class="topbarLink" href="index.html" tabindex="0">Projects</a>
+        <a class="topbarLink" href="index.html" tabindex="0">About</a>
+        <button onclick="dropdown()" class="dropdownButton">
+            <hr><hr><hr>
+        </button>
+    </section>
+    <section class="landing" id="landing">
+        <h1>Snake</h1>
+        <div class="snakeBox">
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="snake"></div></div>
+            <div><div class="space"></div></div>
+            <div><div class="space"></div></div>
+            <div><div class="pellet"></div></div>
+            <div><div class="space"></div></div>
+        </div>
+    </section>
+    <section class="contentSnake" id="content">
+        <p>I made a simple snake game in Java and exported a runnable .jar of it.</p>
+        <div class="linkBox">
+            <a href="resources/files/snake/Snake.jar" download><p>Download .jar</p></a>
+            <a href="resources/files/snake/Snake Source Code.zip" download><p>Download Source Code</p></a>
+        </div>
+        <div class="images">
+            <img src="resources/images/snakeCard.png">
+            <img src="resources/images/snakeHome.png">
+        </div>
+    </section>
+    <footer id="footer">
+        Footer
+    </footer>
+</body>
+</html>
