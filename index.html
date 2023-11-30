@@ -19,9 +19,7 @@
         menu.className = "dropdownMenu";
         menu.id = "dropdownMenu";
 
-        const button = document.createElement("input");
-        button.type = "button";
-        button.innerHTML = "|||";
+        const button = document.createElement("button");
         button.className = "dropdownButton";
         button.onclick = function removeDropdown() {
             const toRemove = document.getElementById("dropdownMenu");
@@ -32,6 +30,9 @@
             document.getElementById("content").style.display = "block";
             document.getElementById("footer").style.display = "flex";
         }
+        button.appendChild(document.createElement("hr"));
+        button.appendChild(document.createElement("hr"));
+        button.appendChild(document.createElement("hr"));
         menu.appendChild(button);
 
         menu.appendChild(createNewDropdownLink("dropdownLink", "homeLink", "Home", "index.html"));
@@ -57,8 +58,9 @@
             <a class="topbarLink" href="index.html" tabindex="0">Home</a>
             <a class="topbarLink" href="index.html" tabindex="0">Projects</a>
             <a class="topbarLink" href="index.html" tabindex="0">About</a>
-            <a class="contact" href="index.html" tabindex="0">Contact</a>
-            <input type="button" onclick="dropdown()" class="dropdownButton"/>
+            <button onclick="dropdown()" class="dropdownButton">
+                <hr><hr><hr>
+            </button>
         </section>
         <section class="landing" id="landing">
             <img src="resources/images/avitar.png" class="avitar">
