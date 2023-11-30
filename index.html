@@ -8,19 +8,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script>
+    function dropdown() {
+        document.getElementById("topbar").style.display = "none";
+        document.getElementById("landing").style.display = "none";
+        document.getElementById("content").style.display = "none";
+        document.getElementById("footer").style.display = "none";
+
+        const menu = document.createElement("div");
+        menu.className = "dropdownMenu";
+        menu.id = "dropdownMenu";
+
+        const button = document.createElement("input");
+        button.type = "button";
+        button.innerHTML = "|||";
+        button.className = "dropdownButton";
+        button.onclick = function removeDropdown() {
+            const toRemove = document.getElementById("dropdownMenu");
+            document.body.removeChild(toRemove);
+
+            document.getElementById("topbar").style.display = "flex";
+            document.getElementById("landing").style.display = "flex";
+            document.getElementById("content").style.display = "block";
+            document.getElementById("footer").style.display = "flex";
+        }
+        menu.appendChild(button);
+
+        menu.appendChild(createNewDropdownLink("dropdownLink", "homeLink", "Home", "index.html"));
+        menu.appendChild(createNewDropdownLink("dropdownLink", "projectsLink", "Projects", "projects.html"));
+        menu.appendChild(createNewDropdownLink("dropdownLink", "aboutLink", "About", "about.html"));
+
+
+        document.body.insertBefore(menu, document.body.children[0]);
+    }
+
+    function createNewDropdownLink(classname, id, label, href) {
+        const toMake = document.createElement("a");
+        toMake.className = classname;
+        toMake.id = id;
+        toMake.innerHTML = "<p>" + label + "</p>";
+        toMake.href = href;
+
+        return toMake;
+    }
+    </script>
     <main>
-        <section class="topbar">
+        <section class="topbar" id="topbar">
+            <a class="topbarLink" href="index.html" tabindex="0">Home</a>
             <a class="topbarLink" href="index.html" tabindex="0">Projects</a>
             <a class="topbarLink" href="index.html" tabindex="0">About</a>
             <a class="contact" href="index.html" tabindex="0">Contact</a>
+            <input type="button" onclick="dropdown()" class="dropdownButton"/>
         </section>
-        <section class="landing">
+        <section class="landing" id="landing">
             <img src="resources/images/avitar.png" class="avitar">
             <h1>Krimx</h1>
         </section>
-        <section class="content">
+        <section class="content" id="content">
             <div class="bio">
-                <p>Hi!, I'm Nadia!
+                <p>Hi! I'm Nadia!
                     <br><br>
                     &nbsp&nbsp&nbsp
                     I'm a computer science student and York College of Pennsylvania. I'm make and mod video games, as well as work on projects that help others. Please feel free to look around and find something you like!</p>
@@ -36,7 +82,7 @@
                 </a>
             </div>
         </section>
-        <footer>
+        <footer id="footer">
             Footer
         </footer>
     </main>
