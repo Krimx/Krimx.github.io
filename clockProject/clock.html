@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="./dist/css/clock.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <script src="JS/time.js"></script>
+    <link rel="icon" href="resources/clockIcon.png">
+</head>
+<body class="clockBody" onload="runClock()">
+    <main>
+        <section class="clockSection">
+            <p><span class="title">Hours: </span><span class="text" id="hours"></span></p>
+
+            <p><span class="title">Minutes: </span><span class="text" id="minutes"></span></p>
+
+            <p><span class="title">Seconds: </span><span class="text" id="seconds"></span></p>
+
+            <p><span class="title">Period: </span><span class="text" id="period"></span></p>
+            <br>
+            <p><span class="title">Day: </span><span class="text" id="day"></span></p>
+
+            <p><span class="title">Month: </span><span class="text" id="month"></span></p>
+
+            <p><span class="title">Year: </span><span class="text" id="year"></span></p>
+        </section>
+    </main>
+</body>
+</html>

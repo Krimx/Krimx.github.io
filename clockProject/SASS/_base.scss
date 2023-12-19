@@ -1,0 +1,55 @@
+$offblack: #0c0c0c;
+$border-color: #444444;
+$title-color: #eee29c;
+$text-color: #e3a8eb;
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clockBody {
+    background-color: $offblack;
+}
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clockSection {
+    @media screen and (orientation:portrait) {
+        width: 70vw;
+        aspect-ratio: 9/10
+    }
+    @media screen and (orientation:landscape) {
+        height: 70vh;
+        aspect-ratio: 9/10
+    }
+    border-radius: 20px;
+    border: 4px solid $border-color;
+    padding-left: 12px;
+    padding-top: 15px;
+
+    p {
+        font-family: 'IBM Plex Mono', monospace;
+        margin-bottom: 5px;
+        @media screen and (orientation:portrait) {
+            font-size: 6vw;
+        }
+        @media screen and (orientation:landscape) {
+            font-size: 5vh;
+        }
+    }
+    .title {
+        color: $title-color
+    }
+    .text {
+        color: $text-color
+    }
+}
