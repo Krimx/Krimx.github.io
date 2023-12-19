@@ -1,0 +1,79 @@
+$offwhite: #f2f2f2;
+$offblack: #0c0c0c;
+$card-gray: #d7e0d7;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: $offwhite;
+}
+
+main {
+    background-color: $offwhite;
+    width: 100%;
+    height: 100%;
+
+    .landing {
+        width: 100%;
+        min-height: 200px;
+        height: 30vh;
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: center;
+
+        h1 {
+            font-size: 80px;
+            font-family: 'Rubik Doodle Shadow';
+            margin-top: 10%;
+        }
+    }
+
+    .content {
+        width: 100%;
+        min-height: 400px;
+
+        .highlightProjects {
+            display: flex;
+            @media screen and (orientation:portrait) {
+                flex-direction: column;
+            }
+            @media screen and (orientation:landscape) {
+                flex-direction: row;
+            }
+            align-items: center;
+            justify-content: start;
+
+            .projectCard {
+                background-color: $card-gray;
+                border-radius: 20px;
+                max-width: 300px;
+                width: 90%;
+                aspect-ratio: 2/3;
+
+                margin: 5%;
+                margin-top: 10%;
+                padding: 10%;
+                color: $offblack;
+                text-decoration: none;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+
+                h2 {
+                    font-family:monospace;
+                }
+                p {
+                    margin-top: 10%;
+                    font-family: monospace;
+                    font-size: large;
+                }
+            }
+        }
+    }
+}

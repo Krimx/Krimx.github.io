@@ -1,0 +1,29 @@
+.topbar {
+    width: 100%;
+    min-height: 60px;
+    height: 2vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+
+    a {
+        @media screen and (orientation:portrait) {
+            margin-right: 4vw;
+        }
+        @media screen and (orientation:landscape) {
+            margin-right: 2vw;
+        }
+        font-size: large;
+        font-family: Arial, Helvetica, sans-serif;
+        color: $offblack;
+        text-decoration: none;
+        cursor: pointer;
+
+        transition: font-size .5s;
+    }
+    a:hover, a:focus {
+        font-size: larger;
+    }
+}
