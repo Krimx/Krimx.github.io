@@ -1,0 +1,96 @@
+.n12 {
+    @media screen and (orientation:portrait) {
+        transform: translate(0, -27vw);
+    }
+    @media screen and (orientation:landscape) {
+        transform: translate(0, -27vh);
+    }
+}
+.n1 {
+    @media screen and (orientation:portrait) {
+        transform: translate(13.5vw, -23.4vw);
+    }
+    @media screen and (orientation:landscape) {
+        transform: translate(13.5vh, -23.4vh);
+    }
+}
+.n2 {
+    @media screen and (orientation:portrait) {
+        transform: translate(23.4vw, -13.5vw);
+    }
+    @media screen and (orientation:landscape) {
+        transform: translate(23.4vh, -13.5vh);
+    }
+}
+.n3 {
+    @media screen and (orientation:portrait) {
+        transform: translate(27vw, 0);
+    }
+    @media screen and (orientation:landscape) {
+        transform: translate(27vh, 0);
+    }
+}
+.n4 {
+    @media screen and (orientation:portrait) {
+        transform: translate(23.3vw, 13.6vw);
+    }
+    @media screen and (orientation:landscape) {
+        transform: translate(23.3vh, 13.6vh);
+    }
+}
+.n5 {
+    @media screen and (orientation:portrait) {
+        transform: translate(13.4vw, 23.4vw);
+    }
+    @media screen and (orientation:landscape) {
+        transform: translate(13.4vh, 23.4vh);
+    }
+}
+.n6 {
+    @media screen and (orientation:portrait) {
+        transform: translate(0, 27vw);
+    }
+    @media screen and (orientation:landscape) {
+        transform: translate(0, 27vh);
+    }
+}
+.n7 {
+    @media screen and (orientation:portrait) {
+        transform: translate(-13.5vw, 23.4vw);
+    }
+    @media screen and (orientation:landscape) {
+        transform: translate(-13.5vh, 23.4vh);
+    }
+}
+.n8 {
+    @media screen and (orientation:portrait) {
+        transform: translate(-23.4vw, 13.5vw);
+    }
+    @media screen and (orientation:landscape) {
+        transform: translate(-23.4vh, 13.5vh);
+    }
+}
+.n9 {
+    @media screen and (orientation:portrait) {
+        transform: translate(-27vw, 0);
+    }
+    @media screen and (orientation:landscape) {
+        transform: translate(-27vh, 0);
+    }
+}
+.n10 {
+    @media screen and (orientation:portrait) {
+        transform: translate(-23.4vw, -13.5vw);
+    }
+    @media screen and (orientation:landscape) {
+        transform: translate(-23.4vh, -13.5vh);
+    }
+}
+.n11 {
+    @media screen and (orientation:portrait) {
+        transform: translate(-13.4vw, -23.4vw);
+    }
+    @media screen and (orientation:landscape) {
+        transform: translate(-13.4vh, -23.4vh);
+    }
+}
