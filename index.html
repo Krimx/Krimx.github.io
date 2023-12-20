@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krimx-Home</title>
     <link rel="stylesheet" href="dist/css/style.min.css">
-    <link rel="stylesheet" href="dist/css/topbar.min.css">
 
 
 
@@ -16,23 +15,41 @@
 </head>
 <body>
     <main>
-        <section class="topbar">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About</a>
-        </section>
         <section class="landing">
-            <h1>Krimx</h1>
+            <section class="topbar">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+            </section>
+            <section class="landingContent">
+                <h1>Krimx</h1>
+                <p class="intro">Hi, my name is Nadia Hanna</p>
+                <p class="intro">I'm a computer science student at <a href="https://www.ycp.edu/">York College of Pennsylvania</a></p>
+                <p class="intro">I make games and simple projects in several different art mediums</p>
+                <p class="letMeShowYou">let me show you</p>
+            </section>
         </section>
         <section class="content">
-            <section class="highlightProjects">
-                <a class="projectCard" id="textClockCard" href="./projects/textClockProject/clock.html">
-                    <h2>Text-Based Clock</h2>
-                    <p>A clock that tells the time nad date through text. A basic project.</p>
+            <section class="autobioThing">
+                <p>I started programming in my sophomore year of high school in an introductory web development class what also taught basic Python.</p>
+                <p>I had the pleasure of having a computer scienmce alumni named <a href="https://www.linkedin.com/in/kai-barclay-982905159">Kai Barclay</a> at my side to give me all the resources I needed to take full interest in the field.</p>
+                <p>Since then, I've been able to take on plenty of projects to refine my skills and get me to where I am today.</p>
+                <p class="letsHaveALook">Let's have a look at some of my favorites:</p>
+            </section>
+            <section class="highlightSection">
+                <a class="highlightProject" href="projects/TheHardwoodIndividual.app.zip" download>
+                    <img src="resources/hardwoodIndividualIcon.png">
+                    <div class="textSpace">
+                        <p>The Hardwood Individual</p>
+                        <p>I made this game as an english project in my senior year of high school. I'm not sure if it can or will run on any device anymore, but I'm still proud of it.</p>
+                    </div>
                 </a>
-                <a class="projectCard" id="analogClockCard" href="./projects/analogClockProject/clock.html">
-                    <h2>Analogue Clock</h2>
-                    <p>A follow-up to the text-based clock because I wanted a bigger challenge.</p>
+                <a class="highlightProject" href="projects/textClockProject/clock.html">
+                    <img src="projects/textClockProject/resources/clockIcon.png">
+                    <div class="textSpace">
+                        <p>Text-Based Clock</p>
+                        <p>A project more or less meant to test my skills with javascript in web design. I think it came out pretty well for my first full web-based project.</p>
+                    </div>
                 </a>
             </section>
         </section>
