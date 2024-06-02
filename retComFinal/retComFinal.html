@@ -1,0 +1,198 @@
+<!--
+    Images generated using deepai
+    https://deepai.org/machine-learning-model/pop-art-generator
+    Images using A.I will be tagged appropriately
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.I Ethics</title>
+    <link rel="stylesheet" href="css/retComFinal.css">
+    <script>
+        window.onload = function() {
+            checkYear();
+            turing();
+            tool();
+            autonomy();
+        }
+
+        function checkYear() {
+            const replace = document.getElementById("yearCheck");
+            const year = new Date().getFullYear();
+            if (year > 2024) {
+                replace.innerHTML = ", 2024";
+            }
+        }
+        let turingClicked = false;
+        let toolClicked = false;
+        let autonomyClicked = false;
+        function turing() {
+            let turingCard = document.getElementById("turingCard");
+            turingCard.addEventListener("click", function() {
+
+            if (!turingClicked) {
+                turingClicked = true;
+                document.getElementById("turingContent").style.display = "flex";
+                if (!window.matchMedia("(orientation: portrait)").matches) {
+                    turingCard.style.width = "90vw";
+                    turingCard.style.aspectRatio = null;
+                    document.getElementById("turingFront").style.width = "30%";
+                    document.getElementById("turingContent").style.width = "70%";
+                }
+                else {
+                    turingCard.style.paddingBottom = "25px";
+                }
+                
+            }
+            else {
+                turingClicked = false;
+                document.getElementById("turingContent").style.display = "none";
+                if (!window.matchMedia("(orientation: portrait)").matches) {
+                    turingCard.style.width = "30vw";
+                    document.getElementById("turingFront").style.width = "100%";
+                }
+                else {
+                    turingCard.style.paddingBottom = null;
+                }
+            }
+        })
+        }
+
+        function tool() {
+            let toolCard = document.getElementById("toolCard");
+            toolCard.addEventListener("click", function() {
+
+            if (!toolClicked) {
+                toolClicked = true;
+                document.getElementById("toolContent").style.display = "flex";
+                if (!window.matchMedia("(orientation: portrait)").matches) {
+                    toolCard.style.width = "90vw";
+                    toolCard.style.aspectRatio = null;
+                    document.getElementById("toolFront").style.width = "30%";
+                    document.getElementById("toolContent").style.width = "70%";
+                }
+                else {
+                    toolCard.style.paddingBottom = "25px";
+                }
+                
+            }
+            else {
+                toolClicked = false;
+                document.getElementById("toolContent").style.display = "none";
+                if (!window.matchMedia("(orientation: portrait)").matches) {
+                    toolCard.style.width = "30vw";
+                    document.getElementById("toolFront").style.width = "100%";
+                }
+                else {
+                    toolCard.style.paddingBottom = null;
+                }
+            }
+        })
+        }
+
+        function autonomy() {
+            let autonomyCard = document.getElementById("autonomyCard");
+            autonomyCard.addEventListener("click", function() {
+
+            if (!autonomyClicked) {
+                autonomyClicked = true;
+                document.getElementById("autonomyContent").style.display = "flex";
+                if (!window.matchMedia("(orientation: portrait)").matches) {
+                    autonomyCard.style.width = "90vw";
+                    autonomyCard.style.aspectRatio = null;
+                    document.getElementById("autonomyFront").style.width = "30%";
+                    document.getElementById("autonomyContent").style.width = "70%";
+                }
+                else {
+                    autonomyCard.style.paddingBottom = "25px";
+                }
+                
+            }
+            else {
+                autonomyClicked = false;
+                document.getElementById("autonomyContent").style.display = "none";
+                if (!window.matchMedia("(orientation: portrait)").matches) {
+                    autonomyCard.style.width = "30vw";
+                    document.getElementById("autonomyFront").style.width = "100%";
+                }
+                else {
+                    autonomyCard.style.paddingBottom = null;
+                }
+            }
+        })
+        }
+        
+    </script>
+</head>
+<body>
+    <section id="landing">
+        <div id="imgSection">
+            <!--Generated using A.I-->
+            <img src="recs/retComFinal/aiModelForLanding.jpg" id="landingCover">
+            <p>Image generated by <a href="https://deepai.org/machine-learning-model/pop-art-generator">deepai</a></p>
+        </div>
+        <div id="titleSection">
+            <h2>A.I in Front of the Law</h2>
+            <h4>How the development of A.I will change its treatment in the court of law.</h4>
+        </div>
+    </section>
+    <section id="intro">
+        <a href="https://time.com/6589487/taylor-swift-searches-blocked-x-twitter-deepfakes-response/">
+            <div id="card">
+                <img id="cardImage" src="https://api.time.com/wp-content/uploads/2024/01/Screenshot-2024-01-28-at-16.13.52.png?w=1690&quality=75">
+                <h2 id="cardTitle">Taylor Swift Searches Blocked by X Amid Circulation of Deepfakes</h2>
+            </div>
+        </a>
+        <p>Many researchers in law and technology alike are wondering if A.I, specifically generative A.I, can be held accountable for the content that it creates. Especially after the events of January<span id="yearCheck"> of this year</span>,
+        in which A.I-generated porn of pop artist Taylor Swift circulated across Twitter, questions of accountability have begun to arise. People are beginning to look at A.I as more than meets the eye and are questioning if it should be held accountable for the content it creates.</p>
+        
+    </section>
+    <section id="content">
+        <div class="contentCard" id="turingCard">
+            <div class="cardFront" id="turingFront">
+                <h3>The Turing Test</h3>
+                <img src="recs/retComFinal/turing.jpg" id="turingImage">
+            </div>
+            <div div id="turingContent">
+                <p>Rafael Dean Brown, an associate professor as Qatar University College of Law, argues that A.I's personhood before the law may appear by the time that it completely passes the Turing Test (a test used to analyze an A.I's ability to pass as a real human being). While it has not been proven that a machine can pass the Turing Test, Brown believes that the type of A.I that would pass would be considered a "strong A.I" and would have an intellectual ability equal to that of a human (Brown). He writes that these types of A.Is would be the ones that would cause world government to gradually grant personhood to various A.I models as they develop.</p>
+            </div>
+        </div>
+        <div class="contentCard" id="toolCard">
+            <div class="cardFront" id="toolFront">
+                <h3>A.I As A Tool</h3>
+                <img src="recs/retComFinal/aiTool.jpg" id="toolImage">
+                <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/52883612@N05/39661181624">Artificial Intelligence</a>" by <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/52883612@N05">Bovee and Thill</a> is licensed under <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by/2.0/?ref=openverse">CC BY 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img></a>.</p>
+            </div>
+            <div div id="toolContent">
+                <p>Answers about whether A.I should be able to hold legal personahood revolve around the qualifications of personhood. As Visa A.J Kurki describes, legal personhood for A.I can come down to three major qualities being moral values, ability to be held responsible, and their role in commercial transactions (Kurki). These qualities can be used to determine if A.I can be considered at more of an independant entity rather than just a tool. Kurki considers how A.I has been used so far by saying "The computer is analogous with, say, a pen used to sign a contract or a gun used to rob a bank" (Kurki).</p>
+            </div>
+        </div>
+
+        <div class="contentCard" id="autonomyCard">
+            <div class="cardFront" id="autonomyFront">
+                <h3>A.I Autonomy</h3>
+                <img src="recs/retComFinal/aiAutonomy.jpg" id="autonomyImage">
+                <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/158301585@N08/43267970922">Artificial Intelligence - Resembling Human Brain</a>" by <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/158301585@N08">deepakiqlect</a> is licensed under <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse">CC BY-SA 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img></a>.</p>
+            </div>
+            <div div id="autonomyContent">
+                <p>Kurki argues that personhood before the law relies on the ability to "act", as in A.I being able to carry out actions on its own rather than being used as a medium for these actions to take place by real people. In the case of Taylor Swift, the A.I software cannot be held accountable because the users requested for the generation of pornographic deepfakes and the A.I did what it was designed to do.</p>
+            </div>
+        </div>
+    </section>
+    <section id="examples">
+    </section>
+    <footer>
+        <div id="worksCited">
+            <p id="wcContent">
+                <span id="wcHeader">Works Cited</span>
+                <!--Im not happy about having to modify links but on mobile it gets fussy with formatting so I really can't change anything-->
+                <p class="citation">Brown, Rafael Dean. “Property Ownership and the Legal Personhood of Artificial Intelligence.” Taylor & Francis Online, 10 Dec. 2020, <a href="https://www.tandfonline.com/doi/full/10.1080/13600834.2020.1861714">www.tandfonline.com/doi/full/10.1080</a>.</p>
+                <p class="citation">Kurki, Visa A.J., 'The Legal Personhood of Artificial Intelligences', A Theory of Legal Personhood (Oxford, 2019; online edn, Oxford Academic, 19 Sept. 2019), https://doi.org/10.1093/oso/9780198844037.003.0007, accessed 22 Apr. 2024.</p>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

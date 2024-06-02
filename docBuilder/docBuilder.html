@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doc Builder</title>
+    <link rel="stylesheet" href="docBuilder.css">
+    <script>
+        var stars = 80;
+        function addParamField() {
+            var toAdd = document.createElement("input");
+            toAdd.type = "text";
+            toAdd.id = "parameter";
+            toAdd.className = "parameter"
+            toAdd.placeholder = "Parameter"
+    
+            document.getElementById("parameters").appendChild(toAdd);
+        }
+
+        function addReturnCase() {
+            var toAdd = document.createElement("input");
+            toAdd.type = "text";
+            toAdd.id = "returnCase";
+            toAdd.className = "returnCase";
+            toAdd.placeholder = "Return Type Case"
+    
+            document.getElementById("returnTypeDiv").appendChild(toAdd);
+        }
+
+        function addTestCase() {
+            var testVal = document.createElement("input");
+            var expectedVal = document.createElement("input");
+            testVal.type = "text";
+            testVal.id = "testVal";
+            testVal.className = "testVal";
+            testVal.placeholder = "Test Value";
+            expectedVal.type = "text";
+            expectedVal.id = "expectedVal";
+            expectedVal.className = "expectedVal";
+            expectedVal.placeholder = "Expected Value";
+
+            var parent = document.createElement("div");
+            parent.className = "testCase";
+
+            parent.appendChild(testVal);
+            parent.appendChild(expectedVal);
+
+            document.getElementById("testCases").appendChild(parent);
+        }
+
+        function buildMethodDoc() {
+            const methodNameElem = document.getElementById("methodName");
+            const descElem = document.getElementById("methodDescription");
+            var parameterElems = document.getElementsByClassName("parameter");
+            const returnTypeElem = document.getElementById("returnType");
+            var returnCaseElems = document.getElementsByClassName("returnCase");
+            var testCaseElems = document.getElementsByClassName("testCase");
+
+            var methodName = methodNameElem.value;
+            var desc = descElem.value;
+
+            var params = [];
+
+            for (var i = 0; i < parameterElems.length; i++) {
+                params.push(String(parameterElems[i].value));
+            }
+
+            var returnType = returnTypeElem.value;
+
+            var returnCases = [];
+
+            for (var i = 0; i < returnCaseElems.length; i++) {
+                returnCases.push(returnCaseElems[i].value);
+            }
+
+            var testVals = [];
+            var expectedVals = [];
+
+            for (var i = 0; i < testCaseElems.length; i++) {
+                var elements = testCaseElems[i].children;
+                testVals.push(elements.item(0).value);
+                expectedVals.push(elements.item(1).value);
+            }
+
+            var toOut = "/"; 
+            for (var i = 0; i < stars; i++) {
+                toOut += "*";
+            }
+            toOut += "<br>";
+
+            var nameSpace = "* " + methodName;
+            nameSpace += extendWhitespace(nameSpace, false);
+            nameSpace += "<br>";
+            toOut += nameSpace;
+
+            var descSpace = "* " + desc;
+            descSpace += extendWhitespace(descSpace, false);
+            descSpace += "<br>";
+            toOut += buildDesc(desc, false);
+            
+            toOut += addLineBreak(false);
+
+            var paramSpace = "* Parameters: ";
+
+            if (params.length == 0) {
+                paramSpace += "none";
+                paramSpace += extendWhitespace(paramSpace, false);
+                paramSpace += "<br>";
+                toOut += paramSpace;
+            }
+            else {
+                paramSpace += extendWhitespace(paramSpace, false);
+                paramSpace += "<br>";
+                toOut += paramSpace;
+
+                for (var i = 0; i < params.length; i++) {
+                    var paramSpace2 = "* " + params[i];
+                    paramSpace2 += extendWhitespace(paramSpace2, false);
+                    paramSpace2 += "<br>";
+                    toOut += paramSpace2;
+                }
+            }
+
+            toOut += addLineBreak(false);
+
+            var returnTypeSpace = "* Return Type: " + returnType;
+            let returnable = true;
+            if (returnType.length == 0) {
+                returnTypeSpace += "none";
+                returnable = false;
+            }
+            returnTypeSpace += extendWhitespace(returnTypeSpace, false);
+            returnTypeSpace += "<br>";
+            toOut += returnTypeSpace;
+
+            for (var i = 0; i < returnCases.length; i++) {
+                var returnSpace2 = "* " + returnCases[i];
+                returnSpace2 += extendWhitespace(returnSpace2, false);
+                returnSpace2 += "<br>";
+                toOut += returnSpace2;
+            }
+
+            if (returnable) {
+                toOut += addLineBreak(false);
+
+                var testSpace = "* Test Cases: ";
+                if (testCaseElems.length == 0) testSpace += "none";
+                testSpace += extendWhitespace(testSpace, false);
+                testSpace += "<br>";
+                toOut += testSpace;
+
+                for (var i = 0; i < testVals.length; i++) {
+                    var testSpace2 = "* " + testVals[i];
+                    testSpace2 += ": " + expectedVals[i];
+                    testSpace2 += extendWhitespace(testSpace2, false);
+                    testSpace2 += "<br>";
+                    toOut += testSpace2;
+                }
+            }
+            
+             
+            for (var i = 0; i < stars; i++) {
+                toOut += "*";
+            }
+            toOut += "/";
+
+            toOut = dealWithArrows(toOut);
+
+            document.getElementById("methodOutput").innerHTML = toOut;
+            document.getElementById("methodOutputArea").style.opacity = "1";
+        }
+
+        function buildMethodDocForCopy() {
+            const methodNameElem = document.getElementById("methodName");
+            const descElem = document.getElementById("methodDescription");
+            var parameterElems = document.getElementsByClassName("parameter");
+            const returnTypeElem = document.getElementById("returnType");
+            var returnCaseElems = document.getElementsByClassName("returnCase");
+            var testValElems = document.getElementsByClassName("testVal");
+            var expectedValElems = document.getElementsByClassName("expectedVal");
+            var testCaseElems = document.getElementsByClassName("testCase");
+
+            var methodName = methodNameElem.value;
+            var desc = descElem.value;
+
+            var params = [];
+
+            for (var i = 0; i < parameterElems.length; i++) {
+                params.push(String(parameterElems[i].value));
+            }
+
+            var returnType = returnTypeElem.value;
+
+            var returnCases = [];
+
+            for (var i = 0; i < returnCaseElems.length; i++) {
+                returnCases.push(returnCaseElems[i].value);
+            }
+
+            var testVals = [];
+            var expectedVals = [];
+
+            for (var i = 0; i < testCaseElems.length; i++) {
+                testVals.push(testCaseElems[i].childNodes.item("testVal").value);
+                expectedVals.push(testCaseElems[i].childNodes.item("expectedVal").value);
+            }
+
+            var toOut = "/"; 
+            for (var i = 0; i < stars; i++) {
+                toOut += "*";
+            }
+            toOut += "\n";
+
+            var nameSpace = "* " + methodName;
+            nameSpace += extendWhitespace(nameSpace, true);
+            nameSpace += "\n";
+            toOut += nameSpace;
+
+            toOut += buildDesc(desc, true);
+            
+            toOut += addLineBreak(true);
+
+            var paramSpace = "* Parameters: ";
+
+            if (params.length == 0) {
+                paramSpace += "none";
+                paramSpace += extendWhitespace(paramSpace, true);
+                paramSpace += "\n";
+                toOut += paramSpace;
+            }
+            else {
+                paramSpace += extendWhitespace(paramSpace, true);
+                paramSpace += "\n";
+                toOut += paramSpace;
+
+                for (var i = 0; i < params.length; i++) {
+                    var paramSpace2 = "* " + params[i];
+                    paramSpace2 += extendWhitespace(paramSpace2, true);
+                    paramSpace2 += "\n";
+                    toOut += paramSpace2;
+                }
+            }
+
+            toOut += addLineBreak(true);
+
+            var returnTypeSpace = "* Return Type: " + returnType;
+            let returnable = true;
+            if (returnType.length == 0) {
+                returnTypeSpace += "none";
+                returnable = false;
+            }
+            returnTypeSpace += extendWhitespace(returnTypeSpace, true);
+            returnTypeSpace += "\n";
+            toOut += returnTypeSpace;
+
+            for (var i = 0; i < returnCases.length; i++) {
+                var returnSpace2 = "* " + returnCases[i];
+                returnSpace2 += extendWhitespace(returnSpace2, true);
+                returnSpace2 += "\n";
+                toOut += returnSpace2;
+            }
+
+            if (returnable) {
+                toOut += addLineBreak(true);
+
+                var testSpace = "* Test Cases: ";
+                if (testCaseElems.length == 0) testSpace += "none";
+                testSpace += extendWhitespace(testSpace, true);
+                testSpace += "\n";
+                toOut += testSpace;
+
+                for (var i = 0; i < testVals.length; i++) {
+                    var testSpace2 = "* " + testVals[i];
+                    testSpace2 += ": " + expectedVals[i];
+                    testSpace2 += extendWhitespace(testSpace2, true);
+                    testSpace2 += "\n";
+                    toOut += testSpace2;
+                }
+            }
+             
+            for (var i = 0; i < stars; i++) {
+                toOut += "*";
+            }
+            toOut += "/";
+
+            document.getElementById("copyable").innerHTML = toOut;
+        }
+
+        function buildDesc(desc, copyOrNot) {
+            var toOut = "";
+
+            var word = "";
+            var line = "* ";
+            var lineLength = 0;
+            for (var i = 0; i < desc.length; i++) {
+
+                if (desc.charAt(i) != " ") {
+                    word += desc.charAt(i)
+                }
+                else {
+                    if (line.length + word.length > stars - 2) {
+                        if (copyOrNot) toOut += line + extendWhitespace(line) + "\n";
+                        else toOut += line + extendWhitespace(line) + "<br>";
+
+                        line = "* " + word + " ";
+                    }
+                    else {
+                        line += word + " ";
+                    }
+                    word = "";
+                }
+
+
+                if (i == desc.length - 1) {
+                    console.log('Passed');
+                    line += word;
+                    if (copyOrNot) toOut += line + extendWhitespace(line) + "\n";
+                    else toOut += line + extendWhitespace(line) + "<br>";
+                    console.log(toOut);
+                }
+            }
+
+            return toOut;
+        }
+
+        function extendWhitespace(toExtend, copyOrNot) {
+            var chars = toExtend.length;
+            var toOut = "";
+            for (var i = 0; i < stars - chars; i++) {
+                if (copyOrNot) toOut += " ";
+                else toOut += "&nbsp";
+            }
+            toOut += "*";
+
+            return toOut;
+        }
+
+        function addLineBreak(copyOrNot) {
+            var toOut = "*";
+            for (var i = 0; i < stars - 1; i++) {
+                if (copyOrNot) toOut += " ";
+                else toOut += "&nbsp";
+            }
+            if (copyOrNot) toOut += "*\n";
+            else toOut += "*<br>";
+            return toOut;
+        }
+
+        function dealWithArrows(toOut) {
+            for (var i = 0; i < toOut.length; i++) {
+                if (toOut.charAt(i) == "<" && toOut.charAt(i + 1) != "b" && toOut.charAt(i + 2) != "r") {
+                    toOut = toOut.slice(0,i) + "&lt" + toOut.slice(i+1);
+                }
+                if (toOut.charAt(i) == ">" && toOut.charAt(i - 1) != "r" && toOut.charAt(i - 2) != "b") {
+                    toOut = toOut.slice(0,i) + "&gt" + toOut.slice(i+1);
+                }
+
+                i+=2;
+            }
+            console.log(toOut);
+            return toOut;
+        }
+    </script>
+</head>
+<body>
+    <section id="content">
+        <div id="methodArea">
+            <form id="methodForm">
+                <div id="methodNameSection">
+                    <input type="text" id="methodName" placeholder="Method Name">
+                </div>
+                <div id="descSection">
+                    <input type="text" id="methodDescription" placeholder="Description">
+                </div>
+                <br>
+                <div id="parameters">
+                    <button type="button" onClick="addParamField();" id="addParamButton">Add Parameter</button>
+                </div>
+                <br>
+                <div id="returnTypeDiv">
+                    <div>
+                        <label for="returnType">Return Type: </label>
+                        <input type="text" id="returnType" placeholder="none">
+                        <button type="button" onclick="addReturnCase();" id="addReturnCaseButton">Add Case</button>
+                    </div>
+                </div>
+                <br>
+                <div id="testCases">
+                    <button type="button" onclick="addTestCase();" id="addTestCaseButton">Add Test Case</button>
+                </div>
+            </form>
+            <br>
+            <button type="button" onclick="buildMethodDoc(); buildMethodDocForCopy();" id="buildButton">Build</button>
+            <div id="methodOutputArea">
+                <p id="methodOutput"></p>
+                <button type="button" onclick="copyTextToClipboard();" id="copyButton">Copy to Clipboard</button>
+                <p id="note">Note: Any formatting issues shown above are due to html being a problem child. Using the copy button will assure proper formatting.</p>
+            </div>
+            <textArea id="copyable"></textArea>
+        </div>
+    </section>
+</body>
+<script>
+    function fallbackCopyTextToClipboard(text) {
+        var textArea = document.getElementById("copyable");
+        
+        // Avoid scrolling to bottom
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+        textArea.focus();
+        textArea.select();
+
+        try {
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'successful' : 'unsuccessful';
+            console.log('Fallback: Copying text command was ' + msg);
+        } catch (err) {
+            console.error('Fallback: Oops, unable to copy', err);
+        }
+    }
+    function copyTextToClipboard() {
+        var text = document.getElementById("copyable").value;
+        if (!navigator.clipboard) {
+            fallbackCopyTextToClipboard(text);
+            return;
+        }
+        navigator.clipboard.writeText(text).then(function() {
+            console.log('Async: Copying to clipboard was successful!');
+        }, function(err) {
+            console.error('Async: Could not copy text: ', err);
+        });
+    }
+</script>
+</html>

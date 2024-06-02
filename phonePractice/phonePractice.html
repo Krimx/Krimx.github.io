@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice | iPhone 15</title>
+    <link rel="stylesheet" href="phonePractice.css">
+    <script>
+        window.onload = updateTime;
+
+        function updateTime() {
+            const timeText = document.getElementById("time");
+
+            var d = new Date(); // for now
+            var hours = d.getHours(); // => 9
+            var minutes = d.getMinutes(); // =>  30
+
+            timeText.innerHTML = (hours % 12) + ":" + minutes;
+        }
+    </script>
+</head>
+<body>
+    <div class="phone">
+        <div class="screen">
+            <div class="island">
+
+            </div>
+            <div class="timeSection">
+                <p id="time">Test</p>
+            </div>
+            <div class="gestureBar">
+
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="left">
+                <div class="ringer">
+                    <div class="button switch"></div>
+                </div>
+                <div class="volumes">
+                    <div class="button vol"></div>
+                    <div class="button vol"></div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="button power"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

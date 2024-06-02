@@ -1,0 +1,233 @@
+:root {
+    --main_color: #A1F1EE ;   
+    --offblack : #0f0f0f;
+    --offwhite : #efefef;
+    --offgray : #d6d6d6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--offwhite);
+}
+
+.menubar {
+    @media screen and (orientation:portrait) {
+        display: none;
+    }
+    @media screen and (orientation:landscape) {
+
+        width: 100vw;
+        height: 10vh;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+}
+
+.logo {
+    height: 80%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: solid 4px var(--offblack);
+    border-radius: 20px;
+}
+
+.logo > img {
+    width: 80%;
+    height: 80%;
+}
+
+.topLink {
+    margin-left:3%;
+
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2rem;
+    color: var(--offblack);
+    text-decoration: none;
+
+    position: relative;
+}
+
+.topLink > p {
+    transform: translateY(0%);
+    color: var(--offblack);
+}
+
+.topLink > .highlight {
+    position: absolute;
+    background-color: var(--main_color);
+    height: 100%;
+    width: 0;
+
+    transform: translateY(0);
+
+    transition: all 0.8s ease-out;
+}
+
+.topLink:hover > .highlight {
+    width: 100%;
+}
+
+.landing {
+    display: flex;
+    @media screen and (orientation:portrait) {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @media screen and (orientation:landscape) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        padding-left: 10%;
+        padding-right: 10%;;
+    }
+}
+
+.landing > .avitar {
+    width: 50%;
+    aspect-ratio: 1/1;
+    z-index: -2
+}
+
+.titleSpace {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.titleSpace > h2 {
+    font-size: 5rem;
+    font-family: "Roboto Condensed", sans-serif;
+    color: var(--offblack);
+}
+
+.titleSpace > h4 {
+    font-size: 2rem;
+    font-family: "Roboto Condensed", sans-serif;
+    margin-top: 2%;
+    color: var(--offblack);
+}
+
+.titleSpace > h4 > a{
+    color: var(--offblack);
+}
+
+.swipe {
+    position: absolute;
+    width: 120vw;
+    height: 20vw;
+    background-color: var(--offgray);
+
+    transform: rotateZ(-5deg) translateX(-10%) translateY(130%);
+
+    z-index: -1;
+}
+
+.content {
+    background-color: var(--offgray);
+    margin-top: 10%;
+
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.scroll {
+    position: absolute;
+    right: 0px;
+    width: 4vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    transform: translateY(-40%);
+}
+
+.scroll > p {
+    font-family: "Roboto Condensed", sans-serif;
+    color: var(--offblack);
+}
+
+.scroll > .scrollLine {
+    height: 500px;
+    width:1px;
+    background-color: var(--offblack);
+    margin-top: 10%;
+}
+
+.featuredTitle {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 3rem;
+}
+
+.featuredCards {
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin-top: 5%;
+}
+
+.featuredCard {
+    width: 20vw;
+    aspect-ratio: 3/4;
+    border-radius: 20px;
+    box-shadow: 0px 0px 66px -33px rgba(0,0,0,0.75);
+    background-color: var(--offwhite);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    overflow: hidden;
+
+    text-decoration: none;
+    color: var(--offblack)
+}
+
+.featuredCard > img {
+    width: 100%;
+    height: 35%;
+    object-fit: cover;
+}
+
+.featuredCard > h2 {
+    font-family: "Roboto Condensed", sans-serif;
+    margin-top: 5%;
+    font-size: 2rem;
+}
+
+.featuredCard > p {
+    font-family: "Roboto Condensed", sans-serif;
+    margin: 10%;
+    font-size: 1.4rem;
+}

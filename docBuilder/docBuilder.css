@@ -1,0 +1,256 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #1b1b1b;
+}
+
+#content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
+}
+
+#methodArea {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    border: 5px solid rgb(219, 154, 224);
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 30px;
+    width: 50vw;
+}
+
+#methodForm {
+    min-width: 300px;
+    width: 40vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    padding: 2px;
+}
+
+#methodNameSection {
+    width: 100%;
+    margin-bottom: 5px;
+
+    display: flex;
+    justify-content: center;
+}
+
+#methodName {
+    width: 40%;
+}
+
+#descSection {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+#methodDescription {
+    width: 90%;
+}
+
+#parameters {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+}
+
+#addParamButton {
+    width: 90%;
+    border: none;
+    min-height: 30px;
+    font-size: 24px;
+    border-radius: 10px;
+    background-color: #5e5e5e;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.1);
+
+    transition: all 0.5s;
+}
+
+#addParamButton:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.3);
+    background-color: #6c6c6c;
+}
+
+#parameter {
+    width: 40%;
+    margin-top: 5px;
+}
+
+#returnTypeDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#returnTypeDiv>div>label {
+    color: #757575;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#returnCase {
+    width: 90%;
+    margin-top: 5px;
+}
+
+#addReturnCaseButton {
+    min-height: 28px;
+    min-width: 20%;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+
+    background-color: #5e5e5e;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.1);
+
+    transition: all 0.5s;
+}
+
+#addReturnCaseButton:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.3);
+    background-color: #6c6c6c;
+}
+
+#testCases {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+#addTestCaseButton {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    min-height: 32px;
+    font-size: 24px;
+
+    background-color: #5e5e5e;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.1);
+
+    transition: all 0.5s;
+}
+
+#addTestCaseButton:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.3);
+    background-color: #6c6c6c;
+}
+
+#testVal {
+    width: 49%;
+    margin-top: 5px;
+    margin-right: 1%;
+}
+
+#expectedVal {
+    width: 49%;
+    margin-top: 5px;
+    margin-left: 1%;
+}
+
+#buildButton {
+    min-height: 64px;
+    aspect-ratio: 16/4;
+    border: none;
+    font-size: 48px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 20px;
+
+    background-color: #5e5e5e;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.1);
+
+    transition: all 0.5s;
+}
+#buildButton:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.3);
+    background-color: #6c6c6c;
+}
+
+#methodOutputArea {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    border-radius: 10px;
+
+    transition: all 0.5s;
+}
+
+#methodOutput {
+    margin: 5px;
+    font-family: monospace;
+    color: black;
+    width: 100%;
+    min-height: 50px;
+    text-align: center;
+    resize: none;
+}
+
+#copyButton {
+    width: 50%;
+    border: none;
+    background-color: #0f0f0f;
+    color: #dfdfdf;
+    border-radius: 10px;
+    aspect-ratio: 9/1.2;
+    cursor: pointer;
+    margin-bottom: 5px;
+
+    transition: all 0.5s;
+}
+#copyButton:hover {
+    background-color: #3a3a3a;
+}
+
+input {
+    padding: 1%;
+    border-radius: 10px;
+    border: none;
+    background-color: #3a3a3a;
+}
+
+button {
+    cursor: pointer;
+}
+
+#copyable {
+    display: none;
+}
+
+input, select, textarea{
+    color: #dfdfdf;
+}
+
+textarea:focus, input:focus {
+    color: #dfdfdf;
+}
+
+#note {
+    font-size: 11px;
+    text-align: center;
+}
+
+button:active {
+    filter: brightness(0.5);
+}
