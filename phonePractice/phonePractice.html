@@ -14,8 +14,10 @@
             var d = new Date(); // for now
             var hours = d.getHours(); // => 9
             var minutes = d.getMinutes(); // =>  30
+            var hour = hours % 12;
+            if (hour == 0) hour = 12;
 
-            timeText.innerHTML = (hours % 12) + ":" + minutes;
+            timeText.innerHTML = hour + ":" + minutes;
         }
     </script>
 </head>
