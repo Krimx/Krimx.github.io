@@ -48,6 +48,10 @@
     color: var(--offblack);
 
     margin-top: 5%;
+
+    @media screen and (orientation:portrait) {
+        width: 60vw;
+    }
 }
 
 .card > img {

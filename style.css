@@ -17,10 +17,17 @@ body {
 
 .menubar {
     @media screen and (orientation:portrait) {
-        display: none;
+        width: 100vw;
+        height: 10vh;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+
+        padding-left: 3%;
     }
     @media screen and (orientation:landscape) {
-
         width: 100vw;
         height: 10vh;
 
@@ -84,6 +91,9 @@ body {
     width: 100%;
 }
 
+
+
+
 .landing {
     display: flex;
     @media screen and (orientation:portrait) {
@@ -104,7 +114,11 @@ body {
 .landing > .avitar {
     width: 50%;
     aspect-ratio: 1/1;
-    z-index: -2
+    z-index: -2;
+
+    @media screen and (orientation:portrait) {
+        width: 80vw;
+    }
 }
 
 .titleSpace {
@@ -112,12 +126,18 @@ body {
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .titleSpace > h2 {
     font-size: 5rem;
     font-family: "Roboto Condensed", sans-serif;
     color: var(--offblack);
+
+    @media screen and (orientation:portrait) {
+        font-size: 3rem;
+    }
 }
 
 .titleSpace > h4 {
@@ -125,6 +145,12 @@ body {
     font-family: "Roboto Condensed", sans-serif;
     margin-top: 2%;
     color: var(--offblack);
+
+    @media screen and (orientation:portrait) {
+        font-size: 1.5rem;
+        width: 100vw;
+        overflow-wrap: break-word;
+    }
 }
 
 .titleSpace > h4 > a{
@@ -134,12 +160,25 @@ body {
 .swipe {
     position: absolute;
     width: 120vw;
-    height: 20vw;
+    height: 25vw;
     background-color: var(--offgray);
 
     transform: rotateZ(-5deg) translateX(-10%) translateY(130%);
 
     z-index: -1;
+
+    @media screen and (orientation:portrait) and (min-width: 410px) {
+        height: 30vw;
+        transform: rotateZ(-5deg) translateX(-10%) translateY(calc(100vw));
+    }
+
+    @media screen and (orientation:portrait) and (max-width: 409px) {
+        display: none;
+    }
+
+    @media screen and (orientation:portrait) and (min-width: 591px) {
+        display: none;
+    }
 }
 
 .content {
@@ -153,6 +192,10 @@ body {
     flex-direction: column;
     justify-content: start;
     align-items: center;
+
+    @media screen and (orientation:portrait) {
+        height: 150vh;
+    }
 }
 
 .scroll {
@@ -166,6 +209,10 @@ body {
     align-items: center;
 
     transform: translateY(-40%);
+
+    @media screen and (orientation:portrait) {
+        right: 2vw;
+    }
 }
 
 .scroll > p {
@@ -194,6 +241,10 @@ body {
     align-items: center;
 
     margin-top: 5%;
+
+    @media screen and (orientation:portrait) {
+        flex-direction: column;
+    }
 }
 
 .featuredCard {
@@ -211,7 +262,12 @@ body {
     overflow: hidden;
 
     text-decoration: none;
-    color: var(--offblack)
+    color: var(--offblack);
+
+    @media screen and (orientation:portrait) {
+        width: 60vw;
+        margin-top: 5%;
+    }
 }
 
 .featuredCard > img {
