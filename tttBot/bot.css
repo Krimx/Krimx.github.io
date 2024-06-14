@@ -1,0 +1,53 @@
+.content {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 40vw;
+    aspect-ratio: 1/1;
+    margin-top: 5%;
+
+    @media screen and (orientation: portrait) {
+        width: 90vw;
+    }
+}
+
+.slot {
+    position: relative;
+    border: 2px solid black;
+    background-color: rgba(255,255,255,0);
+    transition: background-color .2s ease-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slot:hover {
+    background-color: rgba(219,254,255,100);
+}
+
+.symbol {
+    position: absolute;
+    font-family: "Ubuntu Sans Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(40vw / 3);
+    cursor: default;
+
+    @media screen and (orientation: portrait) {
+        font-size: calc(90vw / 3);
+    }
+}
+
+.winnerSlot {
+    background-color: aqua;
+}
+.winnerSlot:hover {
+    background-color: aqua;
+}
