@@ -1,5 +1,6 @@
 :root {
-    --main_color: #A1F1EE ;   
+    --main_color: #A1F1EE ;  
+    --main_hover_color: #93dbd9 ;   
     --offblack : #0f0f0f;
     --offwhite : #efefef;
     --offgray : #d6d6d6;

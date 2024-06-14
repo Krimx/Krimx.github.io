@@ -30,11 +30,13 @@ class Slot {
                 this.x = true;
                 p.textContent = "X";
                 turn = 'o';
+                document.getElementById("turnInd").innerHTML = "Bot's Turn!";
             }
             else if (turn == 'o') {
                 this.o = true;
                 p.textContent = "O";
                 turn = 'x';
+                document.getElementById("turnInd").innerHTML = "Player's Turn!";
             }
 
 
@@ -42,14 +44,60 @@ class Slot {
 
             if (find3X()) {
                 gameOver = true;
+                winner = "X";
             }
             if (find3O()) {
                 gameOver = true;
+                winner = "O";
+            }
+
+            if (gameOver) {
+                document.getElementById("turnInd").innerHTML = winner + " Wins!";
+                if (winner === "tie") document.getElementById("turnInd").innerHTML = "Tie!";
+                document.getElementById("restart").classList.remove("hide");
+                navigator.vibrate(10, 10, 10);
             }
         }
         console.log("Filled Check: " + this.filled);
+        console.log(this.element);
         return thisGotFilled;
     }
+}
+
+function restart() {
+    console.log("Passed waka waka");
+    console.log(slots[0].element);
+
+    for (var i = 1; i <= 9; i++) {
+        if (document.getElementById("slot" + i.toString()).firstChild) document.getElementById("slot" + i.toString()).firstChild.remove();
+        document.getElementById("slot" + i.toString()).classList.remove("winnerSlot");
+    }
+
+    slots = [];
+    slots = [
+        new Slot("slot1"),
+        new Slot("slot2"),
+        new Slot("slot3"),
+        new Slot("slot4"),
+        new Slot("slot5"),
+        new Slot("slot6"),
+        new Slot("slot7"),
+        new Slot("slot8"),
+        new Slot("slot9")
+    ];
+
+    for (var i = 0; i < slots.length; i++) {
+        slots[i].setClick();
+    }
+
+    turn = 'x';
+    winner = "";
+    botTurns = 0;
+    gameOver = false;
+
+    document.getElementById("turnInd").innerHTML = "Player's Turn!";
+
+    document.getElementById("restart").classList.add("hide");
 }
 
 var slots = [
@@ -71,7 +119,7 @@ for (var i = 0; i < slots.length; i++) {
 window.onload = () => {
     setInterval(() => {
 
-        if (turn === 'o') {
+        if (turn === 'o' && !gameOver) {
             botTakeTurn();
         }
 

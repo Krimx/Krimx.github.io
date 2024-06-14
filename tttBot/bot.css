@@ -1,7 +1,9 @@
 .content {
     width: 100vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .board {
@@ -48,6 +50,46 @@
 .winnerSlot {
     background-color: aqua;
 }
-.winnerSlot:hover {
-    background-color: aqua;
+
+.turnInd {
+    font-size: 10vw;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    @media screen and (orientation: landscape) {
+        font-size: 5vw;
+    }
+}
+
+.restart {
+    width: 20vw;
+    height: 7vh;
+    border: none;
+    background-color: var(--main_color);
+
+    font-size: 3vw;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+
+    border-radius: 20px;
+    box-shadow: 0px 0px 28px -10px rgba(0,0,0,0.75);
+
+    @media screen and (orientation: portrait) {
+        width: 40vw;
+        font-size: 6vw;
+    }
+
+    transition: all 1s ease-in-out;
+}
+
+.restart:hover {
+    background-color: var(--main_hover_color);
+    box-shadow: 0px 0px 28px -17px rgba(0,0,0,0.75);
+}
+
+.hide {
+    visibility: hidden;
 }
