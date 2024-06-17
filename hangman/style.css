@@ -124,26 +124,26 @@ box-shadow:  13px 13px 26px #c4c4c4,
 
 .balloon {
     position: absolute;
-    width: 20%;
-    top: 20vh;
+    width: 200px;
+    top: 175px;
 }
 .ball1 {
-    transform: rotateZ(10deg) translateX(2vh);
+    transform: rotateZ(10deg) translateX(10px);
 }
 .ball2 {
-    transform: rotateZ(-20deg) translateX(-4vh) translateY(-1vh);
+    transform: rotateZ(-20deg) translateX(-35px) translateY(-1px);
 }
 .ball3 {
-    transform: rotateZ(-10deg) translateX(-1vh) translateY(-3vh);
+    transform: rotateZ(-10deg) translateX(-15px) translateY(-5px);
 }
 .ball4 {
-    transform: rotateZ(5deg) translateX(1vh) translateY(-4vh);
+    transform: rotateZ(25deg) translateX(35px) translateY(5px);
 }
 .ball5 {
-    transform: rotateZ(30deg) translateX(6vh) translateY(0vh);
+    transform: rotateZ(-30deg) translateX(-50px) translateY(-10px);
 }
 .ball6 {
-    transform: rotateZ(-35deg) translateX(-6vh) translateY(-3vh);
+    transform: rotateZ(-5deg) translateX(-6px) translateY(-6px);
 }
 .ball7 {
 
@@ -155,9 +155,9 @@ box-shadow:  13px 13px 26px #c4c4c4,
 
 .man {
     position: absolute;
-    width: 35vh;
-    top: 43vh;
-    left: 6.5vh;
+    width: 350px;
+    top: 350px;
+    transform: translateX(-70px);
 }
 
 @keyframes fall {
