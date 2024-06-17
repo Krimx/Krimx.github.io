@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="./hangman.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="menubar">
+        <div class="logo">
+            <img src="./recs/logo256black.png">
+        </div>
+        <a class="topLink" href="../index.html">
+            <div class="highlight"></div>
+            <p>Home</p>
+        </a>
+        <a class="topLink" href="../projectsPage/projects.html">
+            <div class="highlight"></div>
+            <p>Projects</p>
+        </a>
+    </section>
+    <section class="gameplay">
+        <div class="manSpace">
+            <img src="./recs/man.png" class="man" id="man">
+            <img src="https://png.pngtree.com/png-vector/20220610/ourmid/pngtree-balloon-line-icon-isolated-on-the-white-vector-background-three-balloons-png-image_4882265.png" class="balloon ball1" id="ball1">
+            <img src="https://png.pngtree.com/png-vector/20220610/ourmid/pngtree-balloon-line-icon-isolated-on-the-white-vector-background-three-balloons-png-image_4882265.png" class="balloon ball2" id="ball2">
+            <img src="https://png.pngtree.com/png-vector/20220610/ourmid/pngtree-balloon-line-icon-isolated-on-the-white-vector-background-three-balloons-png-image_4882265.png" class="balloon ball3" id="ball3">
+            <img src="https://png.pngtree.com/png-vector/20220610/ourmid/pngtree-balloon-line-icon-isolated-on-the-white-vector-background-three-balloons-png-image_4882265.png" class="balloon ball4" id="ball4">
+            <img src="https://png.pngtree.com/png-vector/20220610/ourmid/pngtree-balloon-line-icon-isolated-on-the-white-vector-background-three-balloons-png-image_4882265.png" class="balloon ball5" id="ball5">
+            <img src="https://png.pngtree.com/png-vector/20220610/ourmid/pngtree-balloon-line-icon-isolated-on-the-white-vector-background-three-balloons-png-image_4882265.png" class="balloon ball6" id="ball6">
+            <img src="https://png.pngtree.com/png-vector/20220610/ourmid/pngtree-balloon-line-icon-isolated-on-the-white-vector-background-three-balloons-png-image_4882265.png" class="balloon ball7" id="ball7">
+            <div class="resetSpace">
+                <p id="winOrLose" class="winOrLose hide"></p>
+                <button id="newGame" class="newGame hide" onclick="reset()">New Game</button>
+            </div>
+        </div>
+        <div class="guiSpace">
+            <div class="wordSpace">
+                <p id="word" class="word"></p>
+            </div>
+            <div class="lettersSpace">
+                <button onclick="letter('a')" id="a" class="letterButton">A</button>
+                <button onclick="letter('b')" id="b" class="letterButton">B</button>
+                <button onclick="letter('c')" id="c" class="letterButton">C</button>
+                <button onclick="letter('d')" id="d" class="letterButton">D</button>
+                <button onclick="letter('e')" id="e" class="letterButton">E</button>
+                <button onclick="letter('f')" id="f" class="letterButton">F</button>
+                <button onclick="letter('g')" id="g" class="letterButton">G</button>
+                <button onclick="letter('h')" id="h" class="letterButton">H</button>
+                <button onclick="letter('i')" id="i" class="letterButton">I</button>
+                <button onclick="letter('j')" id="j" class="letterButton">J</button>
+                <button onclick="letter('k')" id="k" class="letterButton">K</button>
+                <button onclick="letter('l')" id="l" class="letterButton">L</button>
+                <button onclick="letter('m')" id="m" class="letterButton">M</button>
+                <button onclick="letter('n')" id="n" class="letterButton">N</button>
+                <button onclick="letter('o')" id="o" class="letterButton">O</button>
+                <button onclick="letter('p')" id="p" class="letterButton">P</button>
+                <button onclick="letter('q')" id="q" class="letterButton">Q</button>
+                <button onclick="letter('r')" id="r" class="letterButton">R</button>
+                <button onclick="letter('s')" id="s" class="letterButton">S</button>
+                <button onclick="letter('t')" id="t" class="letterButton">T</button>
+                <button onclick="letter('u')" id="u" class="letterButton">U</button>
+                <button onclick="letter('v')" id="v" class="letterButton">V</button>
+                <button onclick="letter('w')" id="w" class="letterButton">W</button>
+                <button onclick="letter('x')" id="x" class="letterButton">X</button>
+                <button onclick="letter('y')" id="y" class="letterButton">Y</button>
+                <button onclick="letter('z')" id="z" class="letterButton">Z</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

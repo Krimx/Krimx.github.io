@@ -1,0 +1,185 @@
+body {
+    background-color: var(--offwhite);
+
+    overflow-y: hidden;
+}
+
+.gameplay {
+    width: 100vw;
+    height: 85vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.manSpace {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+
+}
+
+.guiSpace {
+    width: 50%;
+    height: 100%;
+}
+
+.wordSpace {
+    width: 100%;
+    height: 30%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.lettersSpace {
+    width: 100%;
+    height: 70%;
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 5px;
+    column-gap: 5px;
+
+    justify-content: center;
+    padding: 5px;
+}
+
+.lettersSpace > button {
+    width: 10%;
+
+    font-size: 5vw;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+
+    border: none;
+
+    border-radius: 10px;
+background: linear-gradient(145deg, #ffffff, #d7d7d7);
+box-shadow:  13px 13px 26px #c4c4c4,
+             -13px -13px 26px #ffffff;
+}
+
+.lettersSpace > button:hover {
+    border-radius: 10px;
+background: linear-gradient(145deg, #d7d7d7, #ffffff);
+box-shadow:  13px 13px 26px #c4c4c4,
+             -13px -13px 26px #ffffff;
+}
+
+.word {
+    font-size: 5vw;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.tried {
+    visibility: hidden;
+}
+
+.resetSpace {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+.newGame {
+    width: 25vw;
+
+    font-size: 4vw;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    border: none;
+
+    border-radius: 10px;
+background: linear-gradient(145deg, #ffffff, #d7d7d7);
+box-shadow:  13px 13px 26px #c4c4c4,
+             -13px -13px 26px #ffffff;
+}
+
+.newGame:hover {
+    border-radius: 10px;
+background: linear-gradient(145deg, #d7d7d7, #ffffff);
+box-shadow:  13px 13px 26px #c4c4c4,
+             -13px -13px 26px #ffffff;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.balloon {
+    position: absolute;
+    width: 20%;
+    top: 20vh;
+}
+.ball1 {
+    transform: rotateZ(10deg) translateX(2vh);
+}
+.ball2 {
+    transform: rotateZ(-20deg) translateX(-4vh) translateY(-1vh);
+}
+.ball3 {
+    transform: rotateZ(-10deg) translateX(-1vh) translateY(-3vh);
+}
+.ball4 {
+    transform: rotateZ(5deg) translateX(1vh) translateY(-4vh);
+}
+.ball5 {
+    transform: rotateZ(30deg) translateX(6vh) translateY(0vh);
+}
+.ball6 {
+    transform: rotateZ(-35deg) translateX(-6vh) translateY(-3vh);
+}
+.ball7 {
+
+}
+
+.none {
+    display: none;
+}
+
+.man {
+    position: absolute;
+    width: 35vh;
+    top: 43vh;
+    left: 6.5vh;
+}
+
+@keyframes fall {
+    0% {
+        top: 43vh;
+    }
+    100% {
+        top: 200vh;
+    }
+  }
+
+.falling {
+    animation: 1s ease-in  0s 1 fall;
+    animation-fill-mode: forwards;
+    
+}
+
+.winOrLose {
+    font-size: 5vh;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    margin-bottom: 3vh;
+}
